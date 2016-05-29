@@ -107,7 +107,7 @@
 #define Red_LED__SHIFT 6u
 
 /* Miscellaneous */
-#define CY_PROJECT_NAME "BLE Lab 1"
+#define CY_PROJECT_NAME "BLE Lab 1 - group 7"
 #define CY_VERSION "PSoC Creator  3.3 SP2"
 #define CYDEV_BANDGAP_VOLTAGE 1.024
 #define CYDEV_BCLK__HFCLK__HZ 48000000U

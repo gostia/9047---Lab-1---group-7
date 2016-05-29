@@ -1,0 +1,398 @@
+ARM GAS  C:\Users\Rohit\AppData\Local\Temp\ccYX0WGt.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.main,"ax",%progbits
+  18              		.align	2
+  19              		.global	main
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	main, %function
+  23              	main:
+  24              	.LFB37:
+  25              		.file 1 ".\\main.c"
+   1:.\main.c      **** /*******************************************************************************
+   2:.\main.c      **** * File Name: main.c
+   3:.\main.c      **** *
+   4:.\main.c      **** * Version: 1.0
+   5:.\main.c      **** *
+   6:.\main.c      **** * Description:
+   7:.\main.c      **** *  This is the source code for the PSoC 4 BLE Lab 1 - Setting up a Connection.
+   8:.\main.c      **** *
+   9:.\main.c      **** * Hardware Dependency:
+  10:.\main.c      **** *  CY8CKIT-042 BLE Pioneer Kit
+  11:.\main.c      **** *
+  12:.\main.c      **** ********************************************************************************
+  13:.\main.c      **** * Copyright 2014, Cypress Semiconductor Corporation.  All rights reserved.
+  14:.\main.c      **** * You may use this file only in accordance with the license, terms, conditions,
+  15:.\main.c      **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:.\main.c      **** * the software package with which this file was provided.
+  17:.\main.c      **** *******************************************************************************/
+  18:.\main.c      **** #include <project.h>
+  19:.\main.c      **** 
+  20:.\main.c      **** /***************************************
+  21:.\main.c      **** *        API Constants
+  22:.\main.c      **** ***************************************/
+  23:.\main.c      **** #define NO_ALERT           (0u)
+  24:.\main.c      **** #define MILD_ALERT         (1u)
+  25:.\main.c      **** #define HIGH_ALERT         (2u)
+  26:.\main.c      **** 
+  27:.\main.c      **** #define NO_ALERT_COMPARE   (0u)
+  28:.\main.c      **** #define MILD_ALERT_COMPARE (250u)
+  29:.\main.c      **** #define HIGH_ALERT_COMPARE (500u)
+  30:.\main.c      **** 
+  31:.\main.c      **** /***************************************
+  32:.\main.c      **** *        Function Prototypes
+ARM GAS  C:\Users\Rohit\AppData\Local\Temp\ccYX0WGt.s 			page 2
+
+
+  33:.\main.c      **** ***************************************/
+  34:.\main.c      **** void StackEventHandler(uint32 event, void* eventParam);
+  35:.\main.c      **** void IasEventHandler(uint32 event, void* eventParam);
+  36:.\main.c      **** void HandleAlertLEDs(uint8 status);
+  37:.\main.c      **** 
+  38:.\main.c      **** 
+  39:.\main.c      **** /*******************************************************************************
+  40:.\main.c      **** * Function Name: main
+  41:.\main.c      **** ********************************************************************************
+  42:.\main.c      **** *
+  43:.\main.c      **** * Summary:
+  44:.\main.c      **** *  Main function.
+  45:.\main.c      **** *
+  46:.\main.c      **** * Parameters:  
+  47:.\main.c      **** *  None
+  48:.\main.c      **** *
+  49:.\main.c      **** * Return: 
+  50:.\main.c      **** *  None
+  51:.\main.c      **** *
+  52:.\main.c      **** *******************************************************************************/
+  53:.\main.c      **** int main()
+  54:.\main.c      **** {
+  26              		.loc 1 54 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 00AF     		add	r7, sp, #0
+  33              		.cfi_def_cfa_register 7
+  55:.\main.c      ****     CyGlobalIntEnable; 
+  34              		.loc 1 55 0
+  35              	@ 55 ".\main.c" 1
+  36 0004 62B6     		CPSIE   i
+  37              	@ 0 "" 2
+  56:.\main.c      **** 
+  57:.\main.c      ****     /* Start the PWM component */
+  58:.\main.c      ****    PWM_Start();
+  38              		.loc 1 58 0
+  39              		.code	16
+  40 0006 FFF7FEFF 		bl	PWM_Start
+  41              	.L2:
+  59:.\main.c      ****    
+  60:.\main.c      ****     
+  61:.\main.c      ****     for(;;)
+  62:.\main.c      ****     {
+  63:.\main.c      ****         
+  64:.\main.c      ****     }
+  42              		.loc 1 64 0 discriminator 1
+  43 000a FEE7     		b	.L2
+  44              		.cfi_endproc
+  45              	.LFE37:
+  46              		.size	main, .-main
+  47              		.text
+  48              	.Letext0:
+  49              		.section	.debug_info,"",%progbits
+  50              	.Ldebug_info0:
+ARM GAS  C:\Users\Rohit\AppData\Local\Temp\ccYX0WGt.s 			page 3
+
+
+  51 0000 99000000 		.4byte	0x99
+  52 0004 0400     		.2byte	0x4
+  53 0006 00000000 		.4byte	.Ldebug_abbrev0
+  54 000a 04       		.byte	0x4
+  55 000b 01       		.uleb128 0x1
+  56 000c 0E000000 		.4byte	.LASF13
+  57 0010 01       		.byte	0x1
+  58 0011 84010000 		.4byte	.LASF14
+  59 0015 EA000000 		.4byte	.LASF15
+  60 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  61 001d 00000000 		.4byte	0
+  62 0021 00000000 		.4byte	.Ldebug_line0
+  63 0025 02       		.uleb128 0x2
+  64 0026 01       		.byte	0x1
+  65 0027 06       		.byte	0x6
+  66 0028 72010000 		.4byte	.LASF0
+  67 002c 02       		.uleb128 0x2
+  68 002d 01       		.byte	0x1
+  69 002e 08       		.byte	0x8
+  70 002f D7000000 		.4byte	.LASF1
+  71 0033 02       		.uleb128 0x2
+  72 0034 02       		.byte	0x2
+  73 0035 05       		.byte	0x5
+  74 0036 4E010000 		.4byte	.LASF2
+  75 003a 02       		.uleb128 0x2
+  76 003b 02       		.byte	0x2
+  77 003c 07       		.byte	0x7
+  78 003d 5F010000 		.4byte	.LASF3
+  79 0041 02       		.uleb128 0x2
+  80 0042 04       		.byte	0x4
+  81 0043 05       		.byte	0x5
+  82 0044 45010000 		.4byte	.LASF4
+  83 0048 02       		.uleb128 0x2
+  84 0049 04       		.byte	0x4
+  85 004a 07       		.byte	0x7
+  86 004b AE000000 		.4byte	.LASF5
+  87 004f 02       		.uleb128 0x2
+  88 0050 08       		.byte	0x8
+  89 0051 05       		.byte	0x5
+  90 0052 00000000 		.4byte	.LASF6
+  91 0056 02       		.uleb128 0x2
+  92 0057 08       		.byte	0x8
+  93 0058 07       		.byte	0x7
+  94 0059 C0000000 		.4byte	.LASF7
+  95 005d 03       		.uleb128 0x3
+  96 005e 04       		.byte	0x4
+  97 005f 05       		.byte	0x5
+  98 0060 696E7400 		.ascii	"int\000"
+  99 0064 02       		.uleb128 0x2
+ 100 0065 04       		.byte	0x4
+ 101 0066 07       		.byte	0x7
+ 102 0067 9C000000 		.4byte	.LASF8
+ 103 006b 02       		.uleb128 0x2
+ 104 006c 04       		.byte	0x4
+ 105 006d 04       		.byte	0x4
+ 106 006e 7E010000 		.4byte	.LASF9
+ 107 0072 02       		.uleb128 0x2
+ARM GAS  C:\Users\Rohit\AppData\Local\Temp\ccYX0WGt.s 			page 4
+
+
+ 108 0073 08       		.byte	0x8
+ 109 0074 04       		.byte	0x4
+ 110 0075 58010000 		.4byte	.LASF10
+ 111 0079 02       		.uleb128 0x2
+ 112 007a 01       		.byte	0x1
+ 113 007b 08       		.byte	0x8
+ 114 007c E5000000 		.4byte	.LASF11
+ 115 0080 02       		.uleb128 0x2
+ 116 0081 04       		.byte	0x4
+ 117 0082 07       		.byte	0x7
+ 118 0083 8D010000 		.4byte	.LASF12
+ 119 0087 04       		.uleb128 0x4
+ 120 0088 A9000000 		.4byte	.LASF16
+ 121 008c 01       		.byte	0x1
+ 122 008d 35       		.byte	0x35
+ 123 008e 5D000000 		.4byte	0x5d
+ 124 0092 00000000 		.4byte	.LFB37
+ 125 0096 0C000000 		.4byte	.LFE37-.LFB37
+ 126 009a 01       		.uleb128 0x1
+ 127 009b 9C       		.byte	0x9c
+ 128 009c 00       		.byte	0
+ 129              		.section	.debug_abbrev,"",%progbits
+ 130              	.Ldebug_abbrev0:
+ 131 0000 01       		.uleb128 0x1
+ 132 0001 11       		.uleb128 0x11
+ 133 0002 01       		.byte	0x1
+ 134 0003 25       		.uleb128 0x25
+ 135 0004 0E       		.uleb128 0xe
+ 136 0005 13       		.uleb128 0x13
+ 137 0006 0B       		.uleb128 0xb
+ 138 0007 03       		.uleb128 0x3
+ 139 0008 0E       		.uleb128 0xe
+ 140 0009 1B       		.uleb128 0x1b
+ 141 000a 0E       		.uleb128 0xe
+ 142 000b 55       		.uleb128 0x55
+ 143 000c 17       		.uleb128 0x17
+ 144 000d 11       		.uleb128 0x11
+ 145 000e 01       		.uleb128 0x1
+ 146 000f 10       		.uleb128 0x10
+ 147 0010 17       		.uleb128 0x17
+ 148 0011 00       		.byte	0
+ 149 0012 00       		.byte	0
+ 150 0013 02       		.uleb128 0x2
+ 151 0014 24       		.uleb128 0x24
+ 152 0015 00       		.byte	0
+ 153 0016 0B       		.uleb128 0xb
+ 154 0017 0B       		.uleb128 0xb
+ 155 0018 3E       		.uleb128 0x3e
+ 156 0019 0B       		.uleb128 0xb
+ 157 001a 03       		.uleb128 0x3
+ 158 001b 0E       		.uleb128 0xe
+ 159 001c 00       		.byte	0
+ 160 001d 00       		.byte	0
+ 161 001e 03       		.uleb128 0x3
+ 162 001f 24       		.uleb128 0x24
+ 163 0020 00       		.byte	0
+ 164 0021 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Rohit\AppData\Local\Temp\ccYX0WGt.s 			page 5
+
+
+ 165 0022 0B       		.uleb128 0xb
+ 166 0023 3E       		.uleb128 0x3e
+ 167 0024 0B       		.uleb128 0xb
+ 168 0025 03       		.uleb128 0x3
+ 169 0026 08       		.uleb128 0x8
+ 170 0027 00       		.byte	0
+ 171 0028 00       		.byte	0
+ 172 0029 04       		.uleb128 0x4
+ 173 002a 2E       		.uleb128 0x2e
+ 174 002b 00       		.byte	0
+ 175 002c 3F       		.uleb128 0x3f
+ 176 002d 19       		.uleb128 0x19
+ 177 002e 03       		.uleb128 0x3
+ 178 002f 0E       		.uleb128 0xe
+ 179 0030 3A       		.uleb128 0x3a
+ 180 0031 0B       		.uleb128 0xb
+ 181 0032 3B       		.uleb128 0x3b
+ 182 0033 0B       		.uleb128 0xb
+ 183 0034 49       		.uleb128 0x49
+ 184 0035 13       		.uleb128 0x13
+ 185 0036 11       		.uleb128 0x11
+ 186 0037 01       		.uleb128 0x1
+ 187 0038 12       		.uleb128 0x12
+ 188 0039 06       		.uleb128 0x6
+ 189 003a 40       		.uleb128 0x40
+ 190 003b 18       		.uleb128 0x18
+ 191 003c 9642     		.uleb128 0x2116
+ 192 003e 19       		.uleb128 0x19
+ 193 003f 00       		.byte	0
+ 194 0040 00       		.byte	0
+ 195 0041 00       		.byte	0
+ 196              		.section	.debug_aranges,"",%progbits
+ 197 0000 1C000000 		.4byte	0x1c
+ 198 0004 0200     		.2byte	0x2
+ 199 0006 00000000 		.4byte	.Ldebug_info0
+ 200 000a 04       		.byte	0x4
+ 201 000b 00       		.byte	0
+ 202 000c 0000     		.2byte	0
+ 203 000e 0000     		.2byte	0
+ 204 0010 00000000 		.4byte	.LFB37
+ 205 0014 0C000000 		.4byte	.LFE37-.LFB37
+ 206 0018 00000000 		.4byte	0
+ 207 001c 00000000 		.4byte	0
+ 208              		.section	.debug_ranges,"",%progbits
+ 209              	.Ldebug_ranges0:
+ 210 0000 00000000 		.4byte	.LFB37
+ 211 0004 0C000000 		.4byte	.LFE37
+ 212 0008 00000000 		.4byte	0
+ 213 000c 00000000 		.4byte	0
+ 214              		.section	.debug_line,"",%progbits
+ 215              	.Ldebug_line0:
+ 216 0000 3B000000 		.section	.debug_str,"MS",%progbits,1
+ 216      02001F00 
+ 216      00000201 
+ 216      FB0E0D00 
+ 216      01010101 
+ 217              	.LASF6:
+ARM GAS  C:\Users\Rohit\AppData\Local\Temp\ccYX0WGt.s 			page 6
+
+
+ 218 0000 6C6F6E67 		.ascii	"long long int\000"
+ 218      206C6F6E 
+ 218      6720696E 
+ 218      7400
+ 219              	.LASF13:
+ 220 000e 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 220      4320342E 
+ 220      392E3320 
+ 220      32303135 
+ 220      30333033 
+ 221 0041 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 221      20726576 
+ 221      6973696F 
+ 221      6E203232 
+ 221      31323230 
+ 222 0074 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 222      66756E63 
+ 222      74696F6E 
+ 222      2D736563 
+ 222      74696F6E 
+ 223              	.LASF8:
+ 224 009c 756E7369 		.ascii	"unsigned int\000"
+ 224      676E6564 
+ 224      20696E74 
+ 224      00
+ 225              	.LASF16:
+ 226 00a9 6D61696E 		.ascii	"main\000"
+ 226      00
+ 227              	.LASF5:
+ 228 00ae 6C6F6E67 		.ascii	"long unsigned int\000"
+ 228      20756E73 
+ 228      69676E65 
+ 228      6420696E 
+ 228      7400
+ 229              	.LASF7:
+ 230 00c0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 230      206C6F6E 
+ 230      6720756E 
+ 230      7369676E 
+ 230      65642069 
+ 231              	.LASF1:
+ 232 00d7 756E7369 		.ascii	"unsigned char\000"
+ 232      676E6564 
+ 232      20636861 
+ 232      7200
+ 233              	.LASF11:
+ 234 00e5 63686172 		.ascii	"char\000"
+ 234      00
+ 235              	.LASF15:
+ 236 00ea 433A5C55 		.ascii	"C:\\Users\\Rohit\\Documents\\ALL DESKTOP JUNK\\9047"
+ 236      73657273 
+ 236      5C526F68 
+ 236      69745C44 
+ 236      6F63756D 
+ 237 0118 2D2D2D4C 		.ascii	"---Lab-1---group-7\\BLE Lab 1 - group 7.cydsn\000"
+ 237      61622D31 
+ 237      2D2D2D67 
+ARM GAS  C:\Users\Rohit\AppData\Local\Temp\ccYX0WGt.s 			page 7
+
+
+ 237      726F7570 
+ 237      2D375C42 
+ 238              	.LASF4:
+ 239 0145 6C6F6E67 		.ascii	"long int\000"
+ 239      20696E74 
+ 239      00
+ 240              	.LASF2:
+ 241 014e 73686F72 		.ascii	"short int\000"
+ 241      7420696E 
+ 241      7400
+ 242              	.LASF10:
+ 243 0158 646F7562 		.ascii	"double\000"
+ 243      6C6500
+ 244              	.LASF3:
+ 245 015f 73686F72 		.ascii	"short unsigned int\000"
+ 245      7420756E 
+ 245      7369676E 
+ 245      65642069 
+ 245      6E7400
+ 246              	.LASF0:
+ 247 0172 7369676E 		.ascii	"signed char\000"
+ 247      65642063 
+ 247      68617200 
+ 248              	.LASF9:
+ 249 017e 666C6F61 		.ascii	"float\000"
+ 249      7400
+ 250              	.LASF14:
+ 251 0184 2E5C6D61 		.ascii	".\\main.c\000"
+ 251      696E2E63 
+ 251      00
+ 252              	.LASF12:
+ 253 018d 73697A65 		.ascii	"sizetype\000"
+ 253      74797065 
+ 253      00
+ 254              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

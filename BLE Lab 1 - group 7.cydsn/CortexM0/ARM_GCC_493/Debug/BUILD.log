@@ -1,5 +1,5 @@
---------------- Build Started: 05/27/2016 21:37:43 Project: BLE Lab 1, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
-cydsfit.exe -.appdatapath "C:\Users\boogie\AppData\Local\Cypress Semiconductor\PSoC Creator\3.3" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p "C:\Users\boogie\Desktop\Summer Term 2016\ble\Cypress BLE Workshop\Workshop Exrecises and Manuals\Template Labs\BLE Lab 1\BLE Lab 1.cydsn\BLE Lab 1.cyprj" -d CY8C4247LQI-BL483 -s "C:\Users\boogie\Desktop\Summer Term 2016\ble\Cypress BLE Workshop\Workshop Exrecises and Manuals\Template Labs\BLE Lab 1\BLE Lab 1.cydsn\Generated_Source\PSoC4" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+--------------- Build Started: 05/29/2016 12:09:29 Project: BLE Lab 1 - group 7, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\Rohit\AppData\Local\Cypress Semiconductor\PSoC Creator\3.3" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p "C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\BLE Lab 1 - group 7.cyprj" -d CY8C4247LQI-BL483 -s "C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\Generated_Source\PSoC4" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 Elaborating Design...
 HDL Generation ...
 Synthesis ...
@@ -17,38 +17,28 @@ Dependency Generation ...
 Clean Temporary Files ...
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\main.c -o .\CortexM0\ARM_GCC_493\Debug\main.o
 .\main.c: In function 'main':
-.\main.c:58:5: warning: implicit declaration of function 'CyBle_Start' [-Wimplicit-function-declaration]
-     CyBle_Start(StackEventHandler);
-     ^
-.\main.c:61:5: warning: implicit declaration of function 'CyBle_IasRegisterAttrCallback' [-Wimplicit-function-declaration]
-     CyBle_IasRegisterAttrCallback(IasEventHandler);
-     ^
-.\main.c:72:9: warning: implicit declaration of function 'CyBle_ProcessEvents' [-Wimplicit-function-declaration]
+.\main.c:66:9: warning: implicit declaration of function 'CyBle_ProcessEvents' [-Wimplicit-function-declaration]
          CyBle_ProcessEvents();
          ^
-.\main.c: In function 'StackEventHandler':
-.\main.c:100:14: error: 'CYBLE_EVT_STACK_ON' undeclared (first use in this function)
-         case CYBLE_EVT_STACK_ON:
-              ^
-.\main.c:100:14: note: each undeclared identifier is reported only once for each function it appears in
-.\main.c:101:14: error: 'CYBLE_EVT_GAP_DEVICE_DISCONNECTED' undeclared (first use in this function)
-         case CYBLE_EVT_GAP_DEVICE_DISCONNECTED:
-              ^
-.\main.c:103:13: warning: implicit declaration of function 'CyBle_GappStartAdvertisement' [-Wimplicit-function-declaration]
-             CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
-             ^
-.\main.c:103:42: error: 'CYBLE_ADVERTISING_FAST' undeclared (first use in this function)
-             CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
-                                          ^
-.\main.c: In function 'IasEventHandler':
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/cyfitter_cfg.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\cyfitter_cfg.c -o .\CortexM0\ARM_GCC_493\Debug\cyfitter_cfg.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/cymetadata.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\cymetadata.c -o .\CortexM0\ARM_GCC_493\Debug\cymetadata.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/PWM.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\PWM.c -o .\CortexM0\ARM_GCC_493\Debug\PWM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/PWM_PM.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\PWM_PM.c -o .\CortexM0\ARM_GCC_493\Debug\PWM_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/Red_LED.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\Red_LED.c -o .\CortexM0\ARM_GCC_493\Debug\Red_LED.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/Red_LED_PM.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\Red_LED_PM.c -o .\CortexM0\ARM_GCC_493\Debug\Red_LED_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/Clock_1.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\Clock_1.c -o .\CortexM0\ARM_GCC_493\Debug\Clock_1.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/Cm0Start.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\Cm0Start.c -o .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o
+arm-none-eabi-as.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -alh=.\CortexM0\ARM_GCC_493\Debug/CyBootAsmGnu.lst -g -W -o .\CortexM0\ARM_GCC_493\Debug\CyBootAsmGnu.o .\Generated_Source\PSoC4\CyBootAsmGnu.s
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/CyFlash.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\CyFlash.c -o .\CortexM0\ARM_GCC_493\Debug\CyFlash.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/CyLib.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\CyLib.c -o .\CortexM0\ARM_GCC_493\Debug\CyLib.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/cyPm.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\cyPm.c -o .\CortexM0\ARM_GCC_493\Debug\cyPm.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/cyutils.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\cyutils.c -o .\CortexM0\ARM_GCC_493\Debug\cyutils.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/CyLFClk.lst -g -D DEBUG -Wall -ffunction-sections -O0 -ffat-lto-objects -c .\Generated_Source\PSoC4\CyLFClk.c -o .\CortexM0\ARM_GCC_493\Debug\CyLFClk.o
+arm-none-eabi-ar.exe -rs ".\CortexM0\ARM_GCC_493\Debug\BLE Lab 1 - group 7.a" .\CortexM0\ARM_GCC_493\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_493\Debug\PWM.o .\CortexM0\ARM_GCC_493\Debug\PWM_PM.o .\CortexM0\ARM_GCC_493\Debug\Red_LED.o .\CortexM0\ARM_GCC_493\Debug\Red_LED_PM.o .\CortexM0\ARM_GCC_493\Debug\Clock_1.o .\CortexM0\ARM_GCC_493\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_493\Debug\CyFlash.o .\CortexM0\ARM_GCC_493\Debug\CyLib.o .\CortexM0\ARM_GCC_493\Debug\cyPm.o .\CortexM0\ARM_GCC_493\Debug\cyutils.o .\CortexM0\ARM_GCC_493\Debug\CyLFClk.o
+arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_493\Debug\BLE Lab 1 - group 7.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o ".\CortexM0\ARM_GCC_493\Debug\BLE Lab 1 - group 7.elf" .\CortexM0\ARM_GCC_493\Debug\main.o .\CortexM0\ARM_GCC_493\Debug\cymetadata.o .\CortexM0\ARM_GCC_493\Debug\Cm0Start.o ".\CortexM0\ARM_GCC_493\Debug\BLE Lab 1 - group 7.a" "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_493\Debug\CyComponentLibrary.a" -mcpu=cortex-m0 -mthumb -g -ffunction-sections -O0 -ffat-lto-objects -L Generated_Source\PSoC4 "-Wl,-Map,.\CortexM0\ARM_GCC_493\Debug/BLE Lab 1 - group 7.map" -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
+.\CortexM0\ARM_GCC_493\Debug\main.o: In function `main':
+C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn/.\main.c:66: undefined reference to `CyBle_ProcessEvents'
+collect2.exe: error: ld returned 1 exit status
 The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
-.\main.c:136:17: error: 'CYBLE_EVT_IASS_WRITE_CHAR_CMD' undeclared (first use in this function)
-     if(event == CYBLE_EVT_IASS_WRITE_CHAR_CMD)
-                 ^
-.\main.c:142:9: warning: implicit declaration of function 'CyBle_IassGetCharacteristicValue' [-Wimplicit-function-declaration]
-         CyBle_IassGetCharacteristicValue(CYBLE_IAS_ALERT_LEVEL, sizeof(alertLevel), &alertLevel);
-         ^
-.\main.c:142:42: error: 'CYBLE_IAS_ALERT_LEVEL' undeclared (first use in this function)
-         CyBle_IassGetCharacteristicValue(CYBLE_IAS_ALERT_LEVEL, sizeof(alertLevel), &alertLevel);
-                                          ^
---------------- Build Failed: 05/27/2016 21:37:53 ---------------
+--------------- Build Failed: 05/29/2016 12:09:38 ---------------

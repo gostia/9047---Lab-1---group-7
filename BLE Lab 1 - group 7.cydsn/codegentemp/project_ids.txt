@@ -1,0 +1,5 @@
+C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\BLE Lab 1 - group 7.cyprj|2f662aba-86d4-42c8-b05d-cc9e83fbd05d
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|2666ce98-35d0-418e-8c4f-87e22aa3cdd1
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|73cc3c23-0b16-4e3b-8317-1d2382965ebe
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|98701a31-5f81-41aa-b8b0-316714fba9f0
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|34fdea22-1053-4bd6-b1c2-edfa8090b842
