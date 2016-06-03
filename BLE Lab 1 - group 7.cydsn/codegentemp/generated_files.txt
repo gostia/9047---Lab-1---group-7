@@ -17,10 +17,10 @@
   <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\PWM.c" value="ARM_C_FILE;PWM" />
   <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\PWM.h" value="NONE;PWM" />
   <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\PWM_PM.c" value="ARM_C_FILE;PWM" />
-  <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\Red_LED.c" value="ARM_C_FILE;Red_LED" />
-  <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\Red_LED.h" value="NONE;Red_LED" />
-  <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\Red_LED_aliases.h" value="NONE;Red_LED" />
-  <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\Red_LED_PM.c" value="ARM_C_FILE;Red_LED" />
+  <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\Pin_LED.c" value="ARM_C_FILE;Pin_LED" />
+  <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\Pin_LED.h" value="NONE;Pin_LED" />
+  <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\Pin_LED_aliases.h" value="NONE;Pin_LED" />
+  <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\Pin_LED_PM.c" value="ARM_C_FILE;Pin_LED" />
   <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\Clock_1.c" value="ARM_C_FILE;Clock_1" />
   <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\Clock_1.h" value="NONE;Clock_1" />
   <file name="C:\Users\Rohit\Documents\ALL DESKTOP JUNK\9047---Lab-1---group-7\BLE Lab 1 - group 7.cydsn\codegentemp\cycodeshareimport.ld" value="NONE;" />

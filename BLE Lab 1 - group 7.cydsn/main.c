@@ -60,6 +60,8 @@ int main()
     
     for(;;)
     {
+     Pin_LED_Write(~Pin_LED_Read());
+     CyDelay(1000);   
         
     }
 }

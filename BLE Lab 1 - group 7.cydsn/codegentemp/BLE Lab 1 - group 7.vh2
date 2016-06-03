@@ -2,7 +2,7 @@
 --	Conversion of BLE Lab 1 - group 7.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sun May 29 12:13:01 2016
+--	Mon May 30 17:15:16 2016
 --
 
 USE cypress.cypress.all;
@@ -25,24 +25,24 @@ SIGNAL Net_15 : bit;
 SIGNAL Net_94 : bit;
 SIGNAL Net_86 : bit;
 SIGNAL Net_43 : bit;
-SIGNAL tmpOE__Red_LED_net_0 : bit;
-SIGNAL tmpFB_0__Red_LED_net_0 : bit;
-SIGNAL tmpIO_0__Red_LED_net_0 : bit;
-TERMINAL tmpSIOVREF__Red_LED_net_0 : bit;
+SIGNAL tmpOE__Pin_LED_net_0 : bit;
 SIGNAL zero : bit;
+SIGNAL tmpFB_0__Pin_LED_net_0 : bit;
+SIGNAL tmpIO_0__Pin_LED_net_0 : bit;
+TERMINAL tmpSIOVREF__Pin_LED_net_0 : bit;
 SIGNAL one : bit;
-SIGNAL tmpINTERRUPT_0__Red_LED_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__Pin_LED_net_0 : bit;
 BEGIN
 
 zero <=  ('0') ;
 
-tmpOE__Red_LED_net_0 <=  ('1') ;
+tmpOE__Pin_LED_net_0 <=  ('1') ;
 
 \PWM:cy_m0s8_tcpwm_1\:cy_m0s8_tcpwm_v1_0
 	GENERIC MAP(cy_registers=>"")
 	PORT MAP(clock=>Net_43,
 		capture=>zero,
-		count=>tmpOE__Red_LED_net_0,
+		count=>tmpOE__Pin_LED_net_0,
 		reload=>zero,
 		stop=>zero,
 		start=>zero,
@@ -52,11 +52,11 @@ tmpOE__Red_LED_net_0 <=  ('1') ;
 		line_out=>Net_15,
 		line_out_compl=>Net_94,
 		interrupt=>Net_86);
-Red_LED:cy_psoc3_pins_v1_10
+Pin_LED:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"e851a3b9-efb8-48be-bbb8-b303b216c393",
 		drive_mode=>"110",
 		ibuf_enabled=>"1",
-		init_dr_st=>"1",
+		init_dr_st=>"0",
 		input_sync=>"1",
 		input_clk_en=>'0',
 		input_sync_mode=>"0",
@@ -69,7 +69,7 @@ Red_LED:cy_psoc3_pins_v1_10
 		invert_out_reset=>'0',
 		io_voltage=>"",
 		layout_mode=>"CONTIGUOUS",
-		output_conn=>"1",
+		output_conn=>"0",
 		output_sync=>"0",
 		output_clk_en=>'0',
 		output_mode=>"0",
@@ -108,20 +108,20 @@ Red_LED:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__Red_LED_net_0),
-		y=>Net_94,
-		fb=>(tmpFB_0__Red_LED_net_0),
+	PORT MAP(oe=>(tmpOE__Pin_LED_net_0),
+		y=>(zero),
+		fb=>(tmpFB_0__Pin_LED_net_0),
 		analog=>(open),
-		io=>(tmpIO_0__Red_LED_net_0),
-		siovref=>(tmpSIOVREF__Red_LED_net_0),
+		io=>(tmpIO_0__Pin_LED_net_0),
+		siovref=>(tmpSIOVREF__Pin_LED_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__Red_LED_net_0,
+		in_clock_en=>tmpOE__Pin_LED_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__Red_LED_net_0,
+		out_clock_en=>tmpOE__Pin_LED_net_0,
 		out_reset=>zero,
-		interrupt=>tmpINTERRUPT_0__Red_LED_net_0);
+		interrupt=>tmpINTERRUPT_0__Pin_LED_net_0);
 Clock_1:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"502c747e-1e09-4108-bab0-4787f98217a0",

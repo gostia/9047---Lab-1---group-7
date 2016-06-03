@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2016-05-29T16:13:02Z")
+ (DATE "2016-05-30T21:15:17Z")
  (DESIGN "BLE Lab 1 - group 7")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -13,10 +13,7 @@
   (DELAY
    (ABSOLUTE
     (INTERCONNECT ClockBlock.ff_div_7 \\PWM\:cy_m0s8_tcpwm_1\\.clock (0.000:0.000:0.000))
-    (INTERCONNECT \\PWM\:cy_m0s8_tcpwm_1\\.line_out_compl Red_LED\(0\).pin_input (2.660:2.660:2.660))
-    (INTERCONNECT Red_LED\(0\).pad_out Red_LED\(0\).pad_in (0.000:0.000:0.000))
-    (INTERCONNECT Red_LED\(0\).pad_out Red_LED\(0\)_PAD (0.000:0.000:0.000))
-    (INTERCONNECT Red_LED\(0\)_PAD Red_LED\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Pin_LED\(0\)_PAD Pin_LED\(0\).pad_in (0.000:0.000:0.000))
    )
   )
  )

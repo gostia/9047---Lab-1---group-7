@@ -1,6 +1,6 @@
 // ======================================================================
 // BLE Lab 1 - group 7.v generated from TopDesign.cysch
-// 05/29/2016 at 12:13
+// 05/30/2016 at 17:15
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -190,17 +190,17 @@ module top ;
         .line_n(Net_94),
         .clock(Net_43));
 
-	wire [0:0] tmpOE__Red_LED_net;
-	wire [0:0] tmpFB_0__Red_LED_net;
-	wire [0:0] tmpIO_0__Red_LED_net;
-	wire [0:0] tmpINTERRUPT_0__Red_LED_net;
-	electrical [0:0] tmpSIOVREF__Red_LED_net;
+	wire [0:0] tmpOE__Pin_LED_net;
+	wire [0:0] tmpFB_0__Pin_LED_net;
+	wire [0:0] tmpIO_0__Pin_LED_net;
+	wire [0:0] tmpINTERRUPT_0__Pin_LED_net;
+	electrical [0:0] tmpSIOVREF__Pin_LED_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("e851a3b9-efb8-48be-bbb8-b303b216c393"),
 		  .drive_mode(3'b110),
 		  .ibuf_enabled(1'b1),
-		  .init_dr_st(1'b1),
+		  .init_dr_st(1'b0),
 		  .input_clk_en(0),
 		  .input_sync(1'b1),
 		  .input_sync_mode(1'b0),
@@ -218,7 +218,7 @@ module top ;
 		  .oe_sync(1'b0),
 		  .output_clk_en(0),
 		  .output_clock_mode(1'b0),
-		  .output_conn(1'b1),
+		  .output_conn(1'b0),
 		  .output_mode(1'b0),
 		  .output_reset(0),
 		  .output_sync(1'b0),
@@ -249,13 +249,13 @@ module top ;
 		  .ovt_needed(1'b0),
 		  .ovt_slew_control(2'b00),
 		  .input_buffer_sel(2'b00))
-		Red_LED
-		 (.oe(tmpOE__Red_LED_net),
-		  .y({Net_94}),
-		  .fb({tmpFB_0__Red_LED_net[0:0]}),
-		  .io({tmpIO_0__Red_LED_net[0:0]}),
-		  .siovref(tmpSIOVREF__Red_LED_net),
-		  .interrupt({tmpINTERRUPT_0__Red_LED_net[0:0]}),
+		Pin_LED
+		 (.oe(tmpOE__Pin_LED_net),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__Pin_LED_net[0:0]}),
+		  .io({tmpIO_0__Pin_LED_net[0:0]}),
+		  .siovref(tmpSIOVREF__Pin_LED_net),
+		  .interrupt({tmpINTERRUPT_0__Pin_LED_net[0:0]}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -263,7 +263,7 @@ module top ;
 		  .out_clock_en({1'b1}),
 		  .out_reset({1'b0}));
 
-	assign tmpOE__Red_LED_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+	assign tmpOE__Pin_LED_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
 	cy_clock_v1_0

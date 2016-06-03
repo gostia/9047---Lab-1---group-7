@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Red_LED.c  
+* File Name: Pin_LED.c  
 * Version 2.20
 *
 * Description:
@@ -13,35 +13,35 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "Red_LED.h"
+#include "Pin_LED.h"
 
 
-#if defined(Red_LED__PC)
-    #define Red_LED_SetP4PinDriveMode(shift, mode)  \
+#if defined(Pin_LED__PC)
+    #define Pin_LED_SetP4PinDriveMode(shift, mode)  \
     do { \
-        Red_LED_PC =   (Red_LED_PC & \
-                                (uint32)(~(uint32)(Red_LED_DRIVE_MODE_IND_MASK << \
-                                (Red_LED_DRIVE_MODE_BITS * (shift))))) | \
+        Pin_LED_PC =   (Pin_LED_PC & \
+                                (uint32)(~(uint32)(Pin_LED_DRIVE_MODE_IND_MASK << \
+                                (Pin_LED_DRIVE_MODE_BITS * (shift))))) | \
                                 (uint32)((uint32)(mode) << \
-                                (Red_LED_DRIVE_MODE_BITS * (shift))); \
+                                (Pin_LED_DRIVE_MODE_BITS * (shift))); \
     } while (0)
 #else
     #if (CY_PSOC4_4200L)
-        #define Red_LED_SetP4PinDriveMode(shift, mode)  \
+        #define Pin_LED_SetP4PinDriveMode(shift, mode)  \
         do { \
-            Red_LED_USBIO_CTRL_REG = (Red_LED_USBIO_CTRL_REG & \
-                                    (uint32)(~(uint32)(Red_LED_DRIVE_MODE_IND_MASK << \
-                                    (Red_LED_DRIVE_MODE_BITS * (shift))))) | \
+            Pin_LED_USBIO_CTRL_REG = (Pin_LED_USBIO_CTRL_REG & \
+                                    (uint32)(~(uint32)(Pin_LED_DRIVE_MODE_IND_MASK << \
+                                    (Pin_LED_DRIVE_MODE_BITS * (shift))))) | \
                                     (uint32)((uint32)(mode) << \
-                                    (Red_LED_DRIVE_MODE_BITS * (shift))); \
+                                    (Pin_LED_DRIVE_MODE_BITS * (shift))); \
         } while (0)
     #endif
 #endif
   
 
-#if defined(Red_LED__PC) || (CY_PSOC4_4200L) 
+#if defined(Pin_LED__PC) || (CY_PSOC4_4200L) 
     /*******************************************************************************
-    * Function Name: Red_LED_SetDriveMode
+    * Function Name: Pin_LED_SetDriveMode
     ****************************************************************************//**
     *
     * \brief Sets the drive mode for each of the Pins component's pins.
@@ -67,17 +67,17 @@
     *  APIs (primary method) or disable interrupts around this function.
     *
     * \funcusage
-    *  \snippet Red_LED_SUT.c usage_Red_LED_SetDriveMode
+    *  \snippet Pin_LED_SUT.c usage_Pin_LED_SetDriveMode
     *******************************************************************************/
-    void Red_LED_SetDriveMode(uint8 mode)
+    void Pin_LED_SetDriveMode(uint8 mode)
     {
-		Red_LED_SetP4PinDriveMode(Red_LED__0__SHIFT, mode);
+		Pin_LED_SetP4PinDriveMode(Pin_LED__0__SHIFT, mode);
     }
 #endif
 
 
 /*******************************************************************************
-* Function Name: Red_LED_Write
+* Function Name: Pin_LED_Write
 ****************************************************************************//**
 *
 * \brief Writes the value to the physical port (data output register), masking
@@ -106,18 +106,18 @@
 *  this function.
 *
 * \funcusage
-*  \snippet Red_LED_SUT.c usage_Red_LED_Write
+*  \snippet Pin_LED_SUT.c usage_Pin_LED_Write
 *******************************************************************************/
-void Red_LED_Write(uint8 value)
+void Pin_LED_Write(uint8 value)
 {
-    uint8 drVal = (uint8)(Red_LED_DR & (uint8)(~Red_LED_MASK));
-    drVal = (drVal | ((uint8)(value << Red_LED_SHIFT) & Red_LED_MASK));
-    Red_LED_DR = (uint32)drVal;
+    uint8 drVal = (uint8)(Pin_LED_DR & (uint8)(~Pin_LED_MASK));
+    drVal = (drVal | ((uint8)(value << Pin_LED_SHIFT) & Pin_LED_MASK));
+    Pin_LED_DR = (uint32)drVal;
 }
 
 
 /*******************************************************************************
-* Function Name: Red_LED_Read
+* Function Name: Pin_LED_Read
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port (pin status register) and masks 
@@ -131,16 +131,16 @@ void Red_LED_Write(uint8 value)
 *  The current value for the pins in the component as a right justified number.
 *
 * \funcusage
-*  \snippet Red_LED_SUT.c usage_Red_LED_Read  
+*  \snippet Pin_LED_SUT.c usage_Pin_LED_Read  
 *******************************************************************************/
-uint8 Red_LED_Read(void)
+uint8 Pin_LED_Read(void)
 {
-    return (uint8)((Red_LED_PS & Red_LED_MASK) >> Red_LED_SHIFT);
+    return (uint8)((Pin_LED_PS & Pin_LED_MASK) >> Pin_LED_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: Red_LED_ReadDataReg
+* Function Name: Pin_LED_ReadDataReg
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port's data output register and masks 
@@ -149,8 +149,8 @@ uint8 Red_LED_Read(void)
 *
 * The data output register controls the signal applied to the physical pin in 
 * conjunction with the drive mode parameter. This is not the same as the 
-* preferred Red_LED_Read() API because the 
-* Red_LED_ReadDataReg() reads the data register instead of the status 
+* preferred Pin_LED_Read() API because the 
+* Pin_LED_ReadDataReg() reads the data register instead of the status 
 * register. For output pins this is a useful function to determine the value 
 * just written to the pin.
 *
@@ -159,16 +159,16 @@ uint8 Red_LED_Read(void)
 *  justified number for the component instance.
 *
 * \funcusage
-*  \snippet Red_LED_SUT.c usage_Red_LED_ReadDataReg 
+*  \snippet Pin_LED_SUT.c usage_Pin_LED_ReadDataReg 
 *******************************************************************************/
-uint8 Red_LED_ReadDataReg(void)
+uint8 Pin_LED_ReadDataReg(void)
 {
-    return (uint8)((Red_LED_DR & Red_LED_MASK) >> Red_LED_SHIFT);
+    return (uint8)((Pin_LED_DR & Pin_LED_MASK) >> Pin_LED_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: Red_LED_SetInterruptMode
+* Function Name: Pin_LED_SetInterruptMode
 ****************************************************************************//**
 *
 * \brief Configures the interrupt mode for each of the Pins component's
@@ -181,12 +181,12 @@ uint8 Red_LED_ReadDataReg(void)
 * \param position
 *  The pin position as listed in the Pins component. You may OR these to be 
 *  able to configure the interrupt mode of multiple pins within a Pins 
-*  component. Or you may use Red_LED_INTR_ALL to configure the
+*  component. Or you may use Pin_LED_INTR_ALL to configure the
 *  interrupt mode of all the pins in the Pins component.       
-*  - Red_LED_0_INTR       (First pin in the list)
-*  - Red_LED_1_INTR       (Second pin in the list)
+*  - Pin_LED_0_INTR       (First pin in the list)
+*  - Pin_LED_1_INTR       (Second pin in the list)
 *  - ...
-*  - Red_LED_INTR_ALL     (All pins in Pins component)
+*  - Pin_LED_INTR_ALL     (All pins in Pins component)
 *
 * \param mode
 *  Interrupt mode for the selected pins. Valid options are documented in
@@ -202,19 +202,19 @@ uint8 Red_LED_ReadDataReg(void)
 *  port.
 *
 * \funcusage
-*  \snippet Red_LED_SUT.c usage_Red_LED_SetInterruptMode
+*  \snippet Pin_LED_SUT.c usage_Pin_LED_SetInterruptMode
 *******************************************************************************/
-void Red_LED_SetInterruptMode(uint16 position, uint16 mode)
+void Pin_LED_SetInterruptMode(uint16 position, uint16 mode)
 {
     uint32 intrCfg;
     
-    intrCfg =  Red_LED_INTCFG & (uint32)(~(uint32)position);
-    Red_LED_INTCFG = intrCfg | ((uint32)position & (uint32)mode);
+    intrCfg =  Pin_LED_INTCFG & (uint32)(~(uint32)position);
+    Pin_LED_INTCFG = intrCfg | ((uint32)position & (uint32)mode);
 }
 
 
 /*******************************************************************************
-* Function Name: Red_LED_ClearInterrupt
+* Function Name: Pin_LED_ClearInterrupt
 ****************************************************************************//**
 *
 * \brief Clears any active interrupts attached with the component and returns 
@@ -231,13 +231,13 @@ void Red_LED_SetInterruptMode(uint16 position, uint16 mode)
 *  those associated with the Pins component.
 *
 * \funcusage
-*  \snippet Red_LED_SUT.c usage_Red_LED_ClearInterrupt
+*  \snippet Pin_LED_SUT.c usage_Pin_LED_ClearInterrupt
 *******************************************************************************/
-uint8 Red_LED_ClearInterrupt(void)
+uint8 Pin_LED_ClearInterrupt(void)
 {
-	uint8 maskedStatus = (uint8)(Red_LED_INTSTAT & Red_LED_MASK);
-	Red_LED_INTSTAT = maskedStatus;
-    return maskedStatus >> Red_LED_SHIFT;
+	uint8 maskedStatus = (uint8)(Pin_LED_INTSTAT & Pin_LED_MASK);
+	Pin_LED_INTSTAT = maskedStatus;
+    return maskedStatus >> Pin_LED_SHIFT;
 }
 
 
